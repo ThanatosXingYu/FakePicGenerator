@@ -9,7 +9,7 @@ FakePicGenerator，虚假图片生成器，生成一个指定大小的图片（�
 
 要安装最新的开发版本，请键入以下命令：
 ```python
-git clone https://github.com/ThanatosXingYu/SchoolFool
+git clone https://github.com/ThanatosXingYu/FakePicGenerator.git
 
 ```
 使用Python3.x
@@ -25,4 +25,4 @@ python FakePic.py
 
 # 说明
 
-本程序只为恶搞使用，无任何传染性、破坏性，使用所造成的一切后果请自行承担。
+本程序只为娱乐使用，请勿用于任何非法途径。由此引发的任何后果本人不负责任。
