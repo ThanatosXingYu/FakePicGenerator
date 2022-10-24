@@ -62,7 +62,7 @@ def generate():
     size = int(float(size_get) *1024*1024)
     bool = messagebox.askokcancel("请确认", "将生成名为 " + file_name + " 的文件")
     if bool==True:
-        file = open( filename,'w')
+        file = open(filename, 'w')
         file.close()
 
         real_size = 0
@@ -70,7 +70,9 @@ def generate():
             statinfo = os.stat(filename)
             real_size=statinfo.st_size
             f=open(filename,'a')
-            f.write('Copyright ThanatosXY.All Rights Reserved.\n')
+            f.write('Copyright ThanatosXY.All Rights Reserved.\n'
+                    'Copyright ThanatosXY.All Rights Reserved.\n'
+                    'Copyright ThanatosXY.All Rights Reserved.\n')
             f.close()
         os.rename(filename,file_name)
 
