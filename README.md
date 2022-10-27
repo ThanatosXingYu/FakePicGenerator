@@ -22,7 +22,7 @@ git clone https://github.com/ThanatosXingYu/FakePicGenerator.git
 python FakePic.py
 ```
 
-也可使用pyinstaller打包成exe文件后双击使用
+也可使用pyinstaller打包成exe格式
 
 # 说明
 
