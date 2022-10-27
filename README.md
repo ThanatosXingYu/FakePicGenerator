@@ -19,6 +19,7 @@ git clone https://github.com/ThanatosXingYu/FakePicGenerator.git
 # 运行方法
 
 ```
+cd FakePicGenerator
 python FakePic.py
 ```
 
