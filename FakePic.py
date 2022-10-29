@@ -3,6 +3,7 @@
 
 from tkinter import messagebox,filedialog
 import tkinter as tk
+import webbrowser
 import random
 import time
 import os
@@ -91,6 +92,9 @@ def generate():
             f.close()
         os.rename(filename,file_name)
 
+def openbrowser():
+    webbrowser.open("http://blog.xingyu.icu",new=0,autoraise=True)
+    webbrowser.open("https://github.com/ThanatosXingYu/FakePicGenerator",new=0,autoraise=True)
 
 root = tk.Tk()
 root.title("虚假图片生成器")
@@ -118,9 +122,11 @@ format_btn = tk.Button(root,text="随机大小",width=6,command=randformat)
 format_btn.place(x=160,y=145)
 
 generate = tk.Button(root,text="生成",width=6,command=generate)
-generate.place(x=30,y=290)
+generate.place(x=30,y=250)
+openbrowser = tk.Button(root,text="项目主页",width=6,command=openbrowser)
+openbrowser.place(x=95,y=250)
 
-path_lab = tk.Label(root,text="请选择保存路径(留空则为当前目录)")
+path_lab = tk.Label(root,text="选择保存路径(留空则为当前目录)")
 path_lab.place(x=10,y=180 )
 path_entry = tk.Entry(root)
 path_entry.place(x=5,y=210)
@@ -135,7 +141,7 @@ comment3 = tk.Label(root,text="2.输入的文件大小值为0-8MB,由于生成�
 comment3.place(x=290,y=65)
 comment4 = tk.Label(root,text="3.输入的文件格式可以为任意格式,常用图片格式为jpg,jpeg,png等")
 comment4.place(x=290,y=90)
-comment5 = tk.Label(root,text="4.所生成的虚假文件默认保存到此程序的路径下,后续版本可能会增加选择路径保存的功能")
+comment5 = tk.Label(root,text="4.本项目遵循GPL-3.0 license开源协议，详见项目主页")
 comment5.place(x=290,y=115)
 
 root.mainloop()
