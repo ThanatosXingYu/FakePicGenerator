@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
-from tkinter import messagebox
+from tkinter import messagebox,filedialog
 import tkinter as tk
 import random
 import time
@@ -29,10 +29,23 @@ def randformat():
     format_entry.insert(0, formats[rands])
     return
 
+def SelectFilePath(x):
+    global filepath
+    if x==0:
+        path_entry.delete(0, "end")
+        path_entry.insert(0, os.getcwd())
+        filepath=""
+    elif x==1:
+        filepath = tk.filedialog.askdirectory()+"/"
+        path_entry.insert(0, filepath)
+    return
+
 def judge():
     time_get = date_entry.get()
     size_get = size_entry.get()
     format_get = format_entry.get()
+    path_get = path_entry.get()
+
     if time_get == "":
         gettime()
 
@@ -42,6 +55,8 @@ def judge():
     if format_get == "":
         randformat()
 
+    if path_get == "":
+        SelectFilePath(0)
     return
 
 def generate():
@@ -69,7 +84,7 @@ def generate():
         while size>real_size:
             statinfo = os.stat(filename)
             real_size=statinfo.st_size
-            f=open(filename,'a')
+            f=open(filepath+filename,'a')
             f.write('Copyright ThanatosXY.All Rights Reserved.\n'
                     'Copyright ThanatosXY.All Rights Reserved.\n'
                     'Copyright ThanatosXY.All Rights Reserved.\n')
@@ -103,7 +118,14 @@ format_btn = tk.Button(root,text="随机大小",width=6,command=randformat)
 format_btn.place(x=160,y=145)
 
 generate = tk.Button(root,text="生成",width=6,command=generate)
-generate.place(x=30,y=190)
+generate.place(x=30,y=290)
+
+path_lab = tk.Label(root,text="请选择保存路径(留空则为当前目录)")
+path_lab.place(x=10,y=180 )
+path_entry = tk.Entry(root)
+path_entry.place(x=5,y=210)
+path_btn = tk.Button(root,text="选择路径",width=6,command=lambda:SelectFilePath(1))
+path_btn.place(x=160,y=205)
 
 comment1 = tk.Label(root,text="使用说明\n")
 comment1.place(x=450,y=15)
